@@ -1,0 +1,8 @@
+Flask
+flask-login
+flask-bcrypt
+python-dotenv
+requests
+pymysql
+sendgrid
+itsdangerous
