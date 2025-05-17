@@ -24,7 +24,6 @@ packaging==25.0
 psycopg2-binary==2.9.10
 pycares==4.4.0
 pycparser==2.22
-PyMySQL==1.1.1
 python-dotenv==1.0.1
 python-http-client==3.3.7
 requests==2.32.3
