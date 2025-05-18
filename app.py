@@ -8,6 +8,8 @@ import pymysql
 import requests
 import os
 from dotenv import load_dotenv
+
+
 load_dotenv()
 
 
@@ -21,16 +23,7 @@ SMTP_PORT = 587
 EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 
-# MySQL Database
-import os
 
-DB_CONFIG = {
-    'host': os.environ.get('DB_HOST'),
-    'user': os.environ.get('DB_USER'),
-    'password': os.environ.get('DB_PASSWORD'),
-    'database': os.environ.get('DB_NAME'),
-    'cursorclass': pymysql.cursors.DictCursor
-}
 
 
 bcrypt = Bcrypt(app)
@@ -46,7 +39,15 @@ GOOGLE_FACTCHECK_API_KEY = os.environ.get("GOOGLE_FACTCHECK_API_KEY")
 # Database Connection
 # ---------------------
 def get_db_connection():
-    return pymysql.connect(**DB_CONFIG)
+    return pymysql.connect(
+        host=os.environ.get("DB_HOST"),
+        port=int(os.environ.get("DB_PORT", 3306)),
+        user=os.environ.get("DB_USER"),
+        password=os.environ.get("DB_PASSWORD"),
+        database=os.environ.get("DB_NAME"),
+        cursorclass=pymysql.cursors.DictCursor
+    )
+
 
 # ---------------------
 # User Model
