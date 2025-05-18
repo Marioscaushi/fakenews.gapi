@@ -6,6 +6,17 @@ from email.mime.text import MIMEText
 from itsdangerous import URLSafeTimedSerializer
 import pymysql
 import requests
+import os
+import psycopg2
+
+conn = psycopg2.connect(
+    host=os.getenv("DB_HOST"),
+    port=os.getenv("DB_PORT"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    dbname=os.getenv("DB_NAME")
+)
+
 
 # Configuration
 app = Flask(__name__)
