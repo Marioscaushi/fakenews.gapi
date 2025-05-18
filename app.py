@@ -18,8 +18,8 @@ app.secret_key = os.environ.get('FLASK_SECRET_KEY')
 # SMTP2GO Email Server
 SMTP_SERVER = 'mail.smtp2go.com'
 SMTP_PORT = 587
-EMAIL_ADDRESS = 's237439@uos.ac.uk'
-EMAIL_PASSWORD = 'po5Ugg0zsT89QQuu'
+EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
+EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 
 # MySQL Database
 import os
@@ -40,7 +40,7 @@ login_manager.login_view = 'login'
 serializer = URLSafeTimedSerializer(app.secret_key)
 
 # Google API
-GOOGLE_FACTCHECK_API_KEY = "AIzaSyDqAE8V2gQZMvpzm3KJ-v2KAgnPFNhNE3I"
+GOOGLE_FACTCHECK_API_KEY = os.environ.get("GOOGLE_FACTCHECK_API_KEY")
 
 # ---------------------
 # Database Connection
