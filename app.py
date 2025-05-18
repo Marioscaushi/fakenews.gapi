@@ -7,10 +7,13 @@ from itsdangerous import URLSafeTimedSerializer
 import pymysql
 import requests
 import os
+from dotenv import load_dotenv
+load_dotenv()
+
 
 # Configuration
 app = Flask(__name__)
-app.secret_key = 'b0d14844423ccc2dcfc31a9f8cad0bab6da8b60e8b6370bdea454aaf5e29a8ce'
+app.secret_key = os.environ.get('FLASK_SECRET_KEY')
 
 # SMTP2GO Email Server
 SMTP_SERVER = 'mail.smtp2go.com'
@@ -19,13 +22,18 @@ EMAIL_ADDRESS = 's237439@uos.ac.uk'
 EMAIL_PASSWORD = 'po5Ugg0zsT89QQuu'
 
 # MySQL Database
+import os
+
 DB_CONFIG = {
-    'host': '127.0.0.1',
-    'user': 'root',
-    'password': 'ABC1234$',
-    'database': 'fake-news',
+    'host': os.environ.get('DB_HOST'),
+    'user': os.environ.get('DB_USER'),
+    'password': os.environ.get('DB_PASSWORD'),
+    'database': os.environ.get('DB_NAME'),
     'cursorclass': pymysql.cursors.DictCursor
 }
+
+app.secret_key = os.environ.get('FLASK_SECRET_KEY')
+
 
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
