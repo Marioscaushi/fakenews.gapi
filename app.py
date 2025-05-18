@@ -20,7 +20,7 @@ EMAIL_PASSWORD = 'po5Ugg0zsT89QQuu'
 
 # MySQL Database
 DB_CONFIG = {
-    'host': 'localhost',
+    'host': '127.0.0.1',
     'user': 'root',
     'password': 'ABC1234$',
     'database': 'fake-news',
