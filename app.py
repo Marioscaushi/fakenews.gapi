@@ -32,8 +32,6 @@ DB_CONFIG = {
     'cursorclass': pymysql.cursors.DictCursor
 }
 
-app.secret_key = os.environ.get('FLASK_SECRET_KEY')
-
 
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
