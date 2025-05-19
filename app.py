@@ -38,6 +38,13 @@ GOOGLE_FACTCHECK_API_KEY = os.environ.get("GOOGLE_FACTCHECK_API_KEY")
 # ---------------------
 # Database Connection
 # ---------------------
+print("Connecting with:", {
+    "host": os.environ.get("DB_HOST"),
+    "port": os.environ.get("DB_PORT"),
+    "user": os.environ.get("DB_USER"),
+    "password": os.environ.get("DB_PASSWORD"),
+    "database": os.environ.get("DB_NAME"),
+})
 
 def get_db_connection():
     return pymysql.connect(
@@ -49,6 +56,7 @@ def get_db_connection():
         cursorclass=pymysql.cursors.DictCursor,
         ssl={"ssl": {}}
     )
+    
 
 
 
