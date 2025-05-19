@@ -8,6 +8,8 @@ import pymysql
 import requests
 import os
 from dotenv import load_dotenv
+from email.utils import formataddr
+
 
 
 load_dotenv()
@@ -123,7 +125,7 @@ https://fakenews-gapi.onrender.com
 """
     msg = MIMEText(body)
     msg['Subject'] = subject
-    msg['From'] = EMAIL_ADDRESS
+    msg['From'] = formataddr(("Fake News Verification", EMAIL_ADDRESS))
     msg['To'] = email
 
     try:
