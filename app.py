@@ -102,9 +102,25 @@ def send_confirmation_email(email):
     token = serializer.dumps(email, salt='email-confirmation')
     confirm_url = url_for('confirm_email', token=token, _external=True)
 
-    subject = "Please Confirm Your Email"
-    body = f" Hello [User], Thank you for signing up at our Fake News Website! We're excited to have you on board. To complete your registration, please confirm your email address by clicking the button below !\n\n🔵 Confirm your email:\n{confirm_url} \n\n If you did not create an account with us, you can safely ignore this email. \n\n Need help? Feel free to reply to this email — our team is here for you!"
+   
+    subject = "✅ Confirm Your Email – Fake News Verification Account"
+    body = f"""
+Hi {email},
 
+Thanks for signing up with our Fake News Verification platform. We're excited to have you on board!
+
+To activate your account, please confirm your email address by clicking the button below:
+
+👉 Confirm your email:
+{confirm_url}
+
+If you didn’t sign up for this account, feel free to ignore this email.
+
+Best regards,  
+Fake News Verification Team  
+https://fakenews-gapi.onrender.com
+
+"""
     msg = MIMEText(body)
     msg['Subject'] = subject
     msg['From'] = EMAIL_ADDRESS
