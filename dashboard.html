@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
     <title>Dashboard - Fake News Detector</title>
     <style>
         body {
@@ -248,7 +250,7 @@
     }
 
     .container {
-        padding: 20px;
+        padding: 24px;
         width: 100%;
         box-sizing: border-box;
         border-radius: 10px;
@@ -260,15 +262,19 @@
     }
 
     .nav {
+        display: flex;
         flex-direction: column;
-        gap: 10px;
-        text-align: center;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
     }
 
     .nav a {
         display: block;
-        margin: 8px 0;
         font-size: 18px;
+        padding: 8px 0;
+        width: 100%;
+        text-align: center;
     }
 
     .dropdown button {
@@ -278,19 +284,18 @@
     .dropdown-content {
         position: static;
         width: 100%;
+        text-align: center;
     }
 
     input[type="email"],
     input[type="password"],
-    textarea {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
+    textarea,
     input[type="submit"],
     button[type="submit"] {
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
         padding: 14px;
+        box-sizing: border-box;
     }
 
     .btn-logout {
@@ -299,6 +304,7 @@
 
     .icon {
         font-size: 48px;
+        text-align: center;
     }
 
     .result,
@@ -312,6 +318,17 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+    }
+
+    footer {
+        font-size: 13px;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    footer a {
+        display: inline-block;
+        margin: 5px 6px;
     }
 }
 
