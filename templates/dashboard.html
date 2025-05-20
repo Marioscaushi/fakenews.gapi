@@ -241,6 +241,95 @@
             margin: 20px 0;
             text-align: center;
         }
+
+        @media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 24px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+    h1, h2 {
+        font-size: 24px !important;
+        text-align: center;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .nav a {
+        display: block;
+        font-size: 18px;
+        padding: 8px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown button {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    input[type="submit"],
+    button[type="submit"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+    .btn-logout {
+        width: 100%;
+    }
+
+    .icon {
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .result,
+    .example-box,
+    .history li {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .history li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    footer {
+        font-size: 13px;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    footer a {
+        display: inline-block;
+        margin: 5px 6px;
+    }
+}
+
     </style>
 </head>
 

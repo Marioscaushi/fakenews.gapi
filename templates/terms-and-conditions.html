@@ -69,6 +69,80 @@
             font-size: 48px;
             margin-bottom: 15px;
         }
+
+        @media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+    h1, h2 {
+        font-size: 24px !important;
+        text-align: center;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav a {
+        display: block;
+        margin: 8px 0;
+        font-size: 18px;
+    }
+
+    .dropdown button {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    input[type="submit"],
+    button[type="submit"] {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .btn-logout {
+        width: 100%;
+    }
+
+    .icon {
+        font-size: 48px;
+    }
+
+    .result,
+    .example-box,
+    .history li {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .history li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
     </style>
 </head>
 <body>
