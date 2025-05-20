@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Fake News Detector</title>
+    <style>
+        body {
+            background-color: #1f1f1f;
+            color: #f1f1f1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #2d2d2d;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0 0 30px rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 60px; /* Adjusted size for the icon */
+            margin-bottom: 20px;
+        }
+
+        .nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .nav a {
+            color: #4a90e2;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav a:hover {
+            background-color: #357ab8;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            color: #b0b0b0;
+            margin-top: 20px;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            max-width: 700px;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 12px;
+            border: 1px solid #555;
+            background: #1a1a1a;
+            color: #f1f1f1;
+            margin-bottom: 20px;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        input[type="email"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #4a90e2;
+            background-color: #222;
+        }
+
+        input[type="submit"] {
+            background: #4a90e2;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background: #357ab8;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #777;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        footer a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .alert-success {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .alert-danger {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .alert-warning {
+            background-color: #ff9800;
+            color: white;
+        }
+
+        .alert-info {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        .forgot-password {
+            display: block;
+            margin-top: 10px;
+            color: #4a90e2;
+            text-decoration: none;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+    h1, h2 {
+        font-size: 24px !important;
+        text-align: center;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav a {
+        display: block;
+        margin: 8px 0;
+        font-size: 18px;
+    }
+
+    .dropdown button {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    input[type="submit"],
+    button[type="submit"] {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .btn-logout {
+        width: 100%;
+    }
+
+    .icon {
+        font-size: 48px;
+    }
+
+    .result,
+    .example-box,
+    .history li {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .history li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/">Home</a> |
+            <a href="/login">Login</a> |
+            <a href="/register">Register</a>
+        </div>
+
+        <!-- Display flash messages if any -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div>
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Icon and Title -->
+        <div class="icon">🔐</div>
+        <h1>Login</h1>
+
+        <!-- Login Form -->
+        <form method="POST">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="submit" value="Login">
+        </form>
+        
+        
+        <p class="subtitle">Don't have an account? <a href="/register">Register here</a></p>
+    </div>
+
+    <footer>
+        <a href="/how-it-works">How It Works</a> |
+        <a href="/terms-and-conditions">Terms & Conditions</a> |
+        <a href="/privacy-policy">Privacy Policy</a> |
+        Made with ❤️ using Flask + Google Fact Check API 
+    </footer>
+</body>
+</html>

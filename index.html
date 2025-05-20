@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake News Detector</title>
+    <style>
+        body {
+            background-color: #1f1f1f;
+            color: #f1f1f1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #2d2d2d;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 900px;
+            margin: auto;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #e4e4e4;
+        }
+
+        p.subtitle {
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .nav a {
+            color: #4a90e2;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav a:hover {
+            background-color: #357ab8;
+            color: #fff;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown button {
+            background: #4a90e2;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown button:hover {
+            background-color: #357ab8;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #ffffff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #444;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .btn-logout {
+            background: #e94e77;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn-logout:hover {
+            background: #d13c5f;
+        }
+
+        .result {
+            font-size: 18px;
+            margin-top: 30px;
+            background: linear-gradient(to right, #2a2a2a, #1e1e1e);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #444;
+            color: #ddd;
+            line-height: 1.6;
+            word-break: break-word;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .result a {
+            color: #4a90e2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .result a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #777;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        footer a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Textarea Styling */
+        textarea {
+            width: 100%;
+            min-height: 140px;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 12px;
+            border: 1px solid #555;
+            background: #1a1a1a;
+            color: #f1f1f1;
+            resize: vertical;
+            margin-bottom: 20px;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #4a90e2;
+            background-color: #222;
+        }
+
+        button[type="submit"] {
+            background: #4a90e2;
+            border: none;
+            color: white;
+            padding: 14px 30px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background: #357ab8;
+        }
+        
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+    h1, h2 {
+        font-size: 24px !important;
+        text-align: center;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav a {
+        display: block;
+        margin: 8px 0;
+        font-size: 18px;
+    }
+
+    .dropdown button {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    input[type="submit"],
+    button[type="submit"] {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .btn-logout {
+        width: 100%;
+    }
+
+    .icon {
+        font-size: 48px;
+    }
+
+    .result,
+    .example-box,
+    .history li {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .history li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Bar -->
+        <div class="nav">
+            <a href="/">Home</a> |
+            {% if current_user.is_authenticated %}
+            <div class="dropdown">
+                <button onclick="toggleDropdown(event)">My Account ▾</button>
+                <div id="accountDropdown" class="dropdown-content">
+                    <a href="/dashboard">Dashboard</a> 
+                    <a href="/change-password">Change Password</a>
+                    <a href="/logout">Log Out</a>
+                </div>
+            </div>
+            {% else %}
+                <a href="/login">Login</a> |
+                <a href="/register">Register</a>
+            {% endif %}
+        </div>
+
+        <!-- Icon Section Below Navigation Bar -->
+        <div class="icon">📰</div>
+
+        <h1>Welcome to the Fake News Detector</h1>
+        <p class="subtitle">Check the credibility of news articles and claims easily!</p>
+
+        <form method="POST">
+            <label for="news">Paste a news statement:</label>
+            <textarea name="news" id="news" placeholder="Paste your news here..."></textarea>
+            <button type="submit">Check</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h3>Result:</h3>
+            <p><strong>Claim:</strong> {{ news }}</p>
+            <p>{{ result | safe }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <footer>
+         <a href="/how-it-works">How It Works</a> | <a href="/terms-and-conditions">Terms & Conditions</a> |
+        <a href="/privacy-policy">Privacy Policy</a> | Made with ❤️ using Flask + Google Fact Check API 
+    </footer>
+
+    <script>
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const dropdown = document.getElementById('accountDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('accountDropdown');
+            const trigger = event.target.closest('.dropdown');
+            if (!trigger) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
