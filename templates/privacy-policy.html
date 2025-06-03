@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Privacy Policy - Fake News Detector</title>
   <style>
@@ -13,6 +14,7 @@
       margin: 0;
     }
 
+    
     .container {
       background-color: #1e1e1e;
       padding: 40px;
@@ -26,46 +28,37 @@
       font-size: 32px;
       margin-bottom: 10px;
     }
-
     h2 {
       color: #4a90e2;
       margin-top: 30px;
     }
-
     p {
       color: #ddd;
     }
-
     ul {
       padding-left: 20px;
       line-height: 1.8;
     }
-
     li {
       margin-bottom: 10px;
     }
 
+    
+    header[role="banner"] {
+      margin-bottom: 20px;
+    }
     .nav {
       text-align: center;
       margin-bottom: 20px;
     }
-
     .nav a {
       color: #4a90e2;
-      text-decoration: none;
+      text-decoration: underline; 
       font-size: 16px;
       margin: 0 10px;
     }
-
     .nav a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      color: #666;
-      font-size: 14px;
+      color: #cccccc; 
     }
 
     .icon {
@@ -74,35 +67,46 @@
       text-align: center;
     }
 
+    
+    footer[role="contentinfo"] {
+      text-align: center;
+      margin-top: 50px;
+      color: #999; 
+      font-size: 14px;
+    }
+    footer a {
+      color: #4a90e2;
+      text-decoration: underline; 
+    }
+    footer a:hover {
+      color: #cccccc;
+    }
+
+    
     @media (max-width: 768px) {
       body {
         padding: 20px;
       }
-
       .container {
         padding: 20px;
         width: 100%;
         box-sizing: border-box;
         border-radius: 10px;
       }
-
       h1, h2 {
         font-size: 24px !important;
         text-align: center;
       }
-
       .nav {
         flex-direction: column;
         gap: 10px;
         text-align: center;
       }
-
       .nav a {
         display: block;
         margin: 8px 0;
         font-size: 18px;
       }
-
       .icon {
         font-size: 48px;
       }
@@ -110,17 +114,22 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  
+  <header role="banner">
     <div class="nav">
       <a href="/">Home</a> |
       <a href="/how-it-works">How It Works</a> |
       <a href="/terms-and-conditions">Terms & Conditions</a> |
       <a href="/privacy-policy">Privacy Policy</a>
     </div>
+  </header>
 
-    <div class="icon">🔒</div>
-    <h1>Privacy Policy</h1>
-    <p><strong>Last Updated:</strong> 21-05-2025 13:28:56</p>
+  
+  <main role="main">
+    <div class="container">
+      <div class="icon">🔒</div>
+      <h1>Privacy Policy</h1>
+      <p><strong>Last Updated:</strong> 21-05-2025 13:28:56</p>
 
     <h2>1. Introduction</h2>
     <p>Fake News Detector ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard information when you use our website.</p>
@@ -161,9 +170,11 @@
       If you have questions, please contact us:<br />
       <strong>Email:</strong> <a href="mailto:s237439@uos.ac.uk">s237439@uos.ac.uk</a>
     </p>
-  </div>
+    </div>
+  </main>
 
-  <footer>
+  
+  <footer role="contentinfo">
     Made with ❤️ using Flask + Google Fact Check API
   </footer>
 </body>

@@ -1,186 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-    <title>Terms & Conditions - Fake News Detector</title>
-
-    <style>
-        body {
-            background-color: #0f0f0f;
-            color: #ffffff;
-            font-family: 'Segoe UI', sans-serif;
-            padding: 40px;
-            margin: 0;
-        }
-
-        .container {
-            background-color: #1e1e1e;
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 800px;
-            margin: auto;
-            box-shadow: 0 0 30px rgba(255,255,255,0.05);
-        }
-
-        h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            color: #4a90e2;
-            margin-top: 30px;
-        }
-
-        p {
-            color: #ddd;
-        }
-
-        ul {
-            padding-left: 20px;
-            line-height: 1.8;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .nav {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .nav a {
-            color: #4a90e2;
-            text-decoration: none;
-            font-size: 16px;
-            margin: 0 10px;
-        }
-
-        .nav a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            color: #666;
-            font-size: 14px;
-        }
-        .icon {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-
-        @media (max-width: 768px) {
+  <title>Terms & Conditions - Fake News Detector</title>
+  <style>
     body {
-        padding: 20px;
+      background-color: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 40px;
+      margin: 0;
     }
 
+    
     .container {
+      background-color: #1e1e1e;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 0 30px rgba(255,255,255,0.05);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #4a90e2;
+      margin-top: 30px;
+    }
+    p {
+      color: #ddd;
+    }
+    ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+
+    
+    header[role="banner"] {
+      margin-bottom: 20px;
+    }
+    .nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .nav a {
+      color: #4a90e2;
+      text-decoration: underline; 
+      font-size: 16px;
+      margin: 0 10px;
+    }
+    .nav a:hover {
+      color: #cccccc; 
+    }
+
+    .icon {
+      font-size: 48px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    
+    footer[role="contentinfo"] {
+      text-align: center;
+      margin-top: 50px;
+      color: #999; 
+      font-size: 14px;
+    }
+    footer a {
+      color: #4a90e2;
+      text-decoration: underline; 
+    }
+    footer a:hover {
+      color: #cccccc;
+    }
+
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+      .container {
         padding: 20px;
         width: 100%;
         box-sizing: border-box;
         border-radius: 10px;
-    }
-
-    h1, h2 {
+      }
+      h1, h2 {
         font-size: 24px !important;
         text-align: center;
-    }
-
-    .nav {
+      }
+      .nav {
         flex-direction: column;
         gap: 10px;
         text-align: center;
-    }
-
-    .nav a {
+      }
+      .nav a {
         display: block;
         margin: 8px 0;
         font-size: 18px;
-    }
-
-    .dropdown button {
-        width: 100%;
-    }
-
-    .dropdown-content {
-        position: static;
-        width: 100%;
-    }
-
-    input[type="email"],
-    input[type="password"],
-    textarea {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    input[type="submit"],
-    button[type="submit"] {
-        width: 100%;
-        padding: 14px;
-    }
-
-    .btn-logout {
-        width: 100%;
-    }
-
-    .icon {
+      }
+      .icon {
         font-size: 48px;
+      }
     }
-
-    .result,
-    .example-box,
-    .history li {
-        padding: 20px;
-        font-size: 16px;
-    }
-
-    .history li {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-}
-
-    </style>
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="nav">
-            <a href="/">Home</a> |
-            <a href="/how-it-works"> How It Works</a> |
-            <a href="/terms-and-conditions">Terms & Conditions</a> |
-            <a href="/privacy-policy">Privacy Policy</a>
-        </div>
-        <div class="icon">📜</div>
-
-        <h1>Terms & Conditions</h1>
-
-        <h2>1. Introduction</h2>
-        <p>Welcome to Fake News Detector! By accessing or using our service, you agree to comply with and be bound by the following Terms and Conditions. If you do not agree to these terms, please do not use the service.</p>
-
-        <h2>2. Use of Service</h2>
-        <p>Fake News Detector is intended to help users check the credibility of news claims through verified sources. You agree to use the service for lawful purposes only and to respect the rights of others when using our platform.</p>
-
-        <h2>3. Data Privacy</h2>
-        <p>We do not collect or store any personal data from users. Any data entered, such as news claims, is processed anonymously via third-party services (Google Fact Check API).</p>
-
-        <h2>4. Limitations of Liability</h2>
-        <p>While we strive to provide accurate information, Fake News Detector cannot guarantee the accuracy or completeness of the information provided. Users are encouraged to verify claims through multiple sources. We are not liable for any damages resulting from the use of this service.</p>
-
-        <h2>5. Changes to Terms</h2>
-        <p>We reserve the right to modify these Terms & Conditions at any time. Any changes will be posted on this page. Please check regularly for updates.</p>
-
-        <h2>6. Contact Information</h2>
-        <p>If you have any questions about these Terms & Conditions, please contact us at <strong>contact@fakenewsdetector.com</strong>.</p>
+  
+  <header role="banner">
+    <div class="nav">
+      <a href="/">Home</a> |
+      <a href="/how-it-works">How It Works</a> |
+      <a href="/terms-and-conditions">Terms & Conditions</a> |
+      <a href="/privacy-policy">Privacy Policy</a>
     </div>
+  </header>
 
-    <footer>
-        Made with ❤️ using Flask + Google Fact Check API
-    </footer>
+  
+  <main role="main">
+    <div class="container">
+      <div class="icon">📜</div>
+
+      <h1>Terms & Conditions</h1>
+
+      <h2>1. Introduction</h2>
+      <p>Welcome to Fake News Detector! By accessing or using our service, you agree to comply with and be bound by the following Terms and Conditions. If you do not agree to these terms, please do not use the service.</p>
+
+      <h2>2. Use of Service</h2>
+      <p>Fake News Detector is intended to help users check the credibility of news claims through verified sources. You agree to use the service for lawful purposes only and to respect the rights of others when using our platform.</p>
+
+      <h2>3. Data Privacy</h2>
+      <p>We do not collect or store any personal data from users. Any data entered, such as news claims, is processed anonymously via third-party services (Google Fact Check API).</p>
+
+      <h2>4. Limitations of Liability</h2>
+      <p>While we strive to provide accurate information, Fake News Detector cannot guarantee the accuracy or completeness of the information provided. Users are encouraged to verify claims through multiple sources. We are not liable for any damages resulting from the use of this service.</p>
+
+      <h2>5. Changes to Terms</h2>
+      <p>We reserve the right to modify these Terms & Conditions at any time. Any changes will be posted on this page. Please check regularly for updates.</p>
+
+      <h2>6. Contact Information</h2>
+      <p>If you have any questions about these Terms & Conditions, please contact us at <strong>contact@fakenewsdetector.com</strong>.</p>
+    </div>
+  </main>
+
+  
+  <footer role="contentinfo">
+    Made with ❤️ using Flask + Google Fact Check API
+  </footer>
 </body>
 </html>
